@@ -1,0 +1,60 @@
+/* font famly */
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Quicksand:wght@300&display=swap");
+
+.nav_body {
+  background-color: rgb(180, 218, 243);
+  z-index: 0;
+}
+
+/* home */
+.home_body {
+  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
+  height: fit-content;
+  background-size: cover;
+  padding: 5% 30%;
+}
+.Name {
+  padding: 1%;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+}
+.Name img {
+  height: fit-content;
+  width: 55px;
+}
+.Name h1 {
+  color: rgb(96, 96, 202);
+  flex-direction: column;
+  margin-top: -1px;
+  margin-left: 5%;
+  font-size: 1.8rem;
+}
+.home_grid {
+  padding: 7%;
+  text-align: center;
+  color: aliceblue;
+  background-color: rgba(13, 15, 29, 0.349);
+}
+.home_button {
+  width: 100%;
+  padding: 5% 25%;
+  font-weight: bolder;
+  font-size: larger;
+  background-color: rgb(135, 187, 206);
+}
+
+/* footer */
+.home_footer {
+  padding: 6%;
+  text-align: center;
+  height: fit-content;
+  background-color: rgb(223, 228, 228);
+}
+.footer {
+  padding: 1%;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}

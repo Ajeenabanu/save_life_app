@@ -1,0 +1,21 @@
+/* login */
+.donor_logbody {
+  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
+  padding: 12% 30%;
+}
+.donor_logform {
+  padding: 2% 7%;
+  background-color: rgba(2, 5, 7, 0.5);
+}
+/* register */
+.donor_regbody {
+  padding: 5% 20%;
+  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
+}
+.donor_form {
+  background-color: rgba(16, 17, 17, 0.404);
+  padding: 3%;
+}
+.col-form-label {
+  color: aliceblue;
+}
