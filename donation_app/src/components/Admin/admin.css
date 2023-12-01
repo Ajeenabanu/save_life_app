@@ -1,11 +1,20 @@
 /* login */
 .admin_logbody {
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
-  padding: 12% 30%;
+  background-image: url("https://www.rush.edu/sites/default/files/media-images/Organ-Donation-Facts-OG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10% 30%;
 }
 .admin_logform {
+  margin-top: 20%;
   padding: 2% 7%;
   background-color: rgba(2, 5, 7, 0.5);
+}
+@media screen and (max-width: 548px) {
+  .admin_logform {
+    margin-top: 50%;
+    width: 100%;
+  }
 }
 .form-style {
   background-color: rgba(239, 243, 245, 0.158);
@@ -15,30 +24,105 @@
 .form-style:hover {
   color: black;
 }
-/* dashboard */
 
-.navlist {
-  font-size: large;
-  font-weight: bolder;
+.seeList {
+  padding-top: 100px;
 }
-.admin_listbody{
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
-  height: 530px;
-}
-.list{
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
-  color: rgb(255, 255, 255);
-  text-align: center;
-  height:fit-content;
 
+.admin-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 89px;
 }
-.donordetails{
-  color: rgb(255, 255, 255);
-  background-color: rgba(5, 7, 7, 0.575);
-  border-radius: 16px;
-  padding: 1%;
-  margin: 2%;
+
+.sidebar {
+  width: auto;
+  margin: 0;
+  height: 100vh;
+  padding: 5%;
+  width: 25%;
 }
-.donordetails div{
+#sidebar {
+  background-color: #5c5b5b;
+  margin-left: -2px;
+}
+
+.sidebar .nav-link {
+  color: #fff;
   font-size: larger;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #000000;
+  border-radius: 6px;
+}
+.admin-content {
+  background-color: #f8f9fa;
+  padding-top: 31px;
+}
+
+@media (max-width: 700px) {
+  .admin-dashboard {
+    flex-direction: column;
+    padding-top: 84px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 100px;
+  }
+
+  .admin-content {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+.fa-user:before {
+  content: "\f007";
+  font-size: 12px;
+  margin-right: 8px;
+}
+.fa-bell:before {
+  margin-right: 8px;
+}
+.fa-gear:before {
+  margin-right: 8px;
+}
+.navimgdash img {
+  width: 200px;
+  margin-left: -91px;
+}
+.fa-inbox:before {
+  margin-right: 8px;
+}
+.notify {
+  padding: 5%;
+  background-color: #ffffff;
+}
+.userimg {
+  width: 12%;
+}
+.Notificationbody {
+  padding: 3%;
+  margin: 2%;
+  background-color: #eff0f4;
+  border-left: 5px solid #8d0404;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Add this CSS class to hide the content */
+.hidden-content {
+  display: none;
+}
+
+#adminerror{
+  margin-top: 2%;
+  background-color: #9b9797ab;
+  color: #8d0404;
+  font-size: large;
+  font-weight: bold;
 }

@@ -9,9 +9,11 @@ app.use(cors());
 const mongoose = require("mongoose");
 
 let routes = require("./routes/route");
+app.get("/",(req,res)=>{
+  res.send("get")
+})
 
 app.use("/", routes);
-
 mongoose
   .connect("mongodb://localhost:27017/donation", {
     useNewUrlParser: true,
@@ -23,3 +25,5 @@ mongoose
     )
   )
   .catch((error) => console.log(`${error} did not connect`));
+
+

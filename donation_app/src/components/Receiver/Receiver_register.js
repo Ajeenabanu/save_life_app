@@ -4,9 +4,11 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import Nav from "../Nav";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../Home/imges/logo.png";
 
 function Receiver_register() {
   let navigate = useNavigate();
@@ -17,13 +19,19 @@ function Receiver_register() {
   const [receiver_age, setReceiver_age] = useState();
   const [receiver_mobile, setReceiver_mobile] = useState();
   const [receiver_disease, setReceiver_disease] = useState("");
-  const [receiver_doctor, setReceiver_doctor] = useState("");
+  const [receiver_doctor, setReceiver_doctor] = useState("Dr.");
   const [receiver_organ, setReceiver_organ] = useState("");
   const [receiver_blood, setReceiver_blood] = useState("");
   const [receiver_address, setReceiver_address] = useState("");
 
   const receiverRegister = (e) => {
     e.preventDefault();
+    const isValidMobile = /^\d{10}$/.test(receiver_mobile);
+
+    if (!isValidMobile) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
     axios
       .post("http://localhost:3001/receiver_register", {
         receiver_name,
@@ -50,10 +58,22 @@ function Receiver_register() {
 
   return (
     <div className="receiver_reg">
-      <Nav />
-
+      <div className="navshadow">
+        <Container>
+          <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <div className="col-9">
+              <Navbar.Brand href="/" className="toggleimg">
+                <img
+                  alt="no images"
+                  src={logo}
+                  className="d-inline-block align-top "
+                />{" "}
+              </Navbar.Brand>
+            </div>
+          </Navbar>
+        </Container>
+      </div>{" "}
       <div className="receiver_regbody">
-        <h3 className="text-center text-white">Receiver Register</h3>
         <div className="receiver_form">
           <Form>
             <Form.Group
@@ -252,7 +272,7 @@ function Receiver_register() {
             </Form.Group>
             <div className="text-center">
               {" "}
-              <Button onClick={receiverRegister} variant="primary mt-3 ">
+              <Button onClick={receiverRegister} variant="danger mt-3 ">
                 Register
               </Button>{" "}
             </div>

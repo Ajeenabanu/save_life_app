@@ -3,46 +3,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Quicksand:wght@300&display=swap");
 
 .nav_body {
-  background-color: rgb(180, 218, 243);
-  z-index: 0;
+  background-color: rgb(58, 6, 6);
+  z-index: 1;
+  position: fixed;
+  width: 100%;
 }
-
+.navshadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 /* home */
 .home_body {
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
-  height: fit-content;
+  background-image: url("https://www.rush.edu/sites/default/files/media-images/Organ-Donation-Facts-OG.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
   background-size: cover;
   padding: 5% 30%;
-}
-.Name {
-  padding: 1%;
-  font-weight: bold;
-  text-decoration: none;
-  display: flex;
-}
-.Name img {
-  height: fit-content;
-  width: 55px;
-}
-.Name h1 {
-  color: rgb(96, 96, 202);
-  flex-direction: column;
-  margin-top: -1px;
-  margin-left: 5%;
-  font-size: 1.8rem;
-}
-.home_grid {
-  padding: 7%;
-  text-align: center;
-  color: aliceblue;
-  background-color: rgba(13, 15, 29, 0.349);
-}
-.home_button {
-  width: 100%;
-  padding: 5% 25%;
-  font-weight: bolder;
-  font-size: larger;
-  background-color: rgb(135, 187, 206);
 }
 
 /* footer */
@@ -50,11 +25,136 @@
   padding: 6%;
   text-align: center;
   height: fit-content;
-  background-color: rgb(223, 228, 228);
 }
 .footer {
   padding: 1%;
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(168, 168, 168, 0.603);
+}
+.footericons {
+  color: #c20a0a;
+  font-size: 25px;
+}
+.danger {
+  width: 50%;
+  color: #c20a0a;
+  text-align: center;
+}
+.carouselimg img {
+  width: 100%;
+  height: 550px;
+}
+.toggleimg img {
+  width: 200px;
+  margin-left: -6%;
+}
+.loginbtn {
+  background-color: brown;
+  border-radius: 22px;
+  outline: none;
+  border: none;
   color: rgb(255, 255, 255);
+}
+.navshadow {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+}
+.carouselBody {
+  padding-top: 2%;
+}
+.home {
+  max-width: 100%;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+}
+.col2 img {
+  width: 100%;
+  margin-top: 16%;
+  padding: 5%;
+  margin-left: 6%;
+}
+.col1 {
+  margin-top: 185px;
+}
+
+.col3 img {
+  width: 70%;
+  padding: 14% 0;
+}
+.col1 p {
+  font-size: large;
+  width: 98%;
+}
+.col4 {
+  padding-top: 5%;
+  padding-left: 6%;
+}
+
+.col4 p {
+  margin-right: 17%;
+}
+.homebtn {
+  background-color: rgb(168, 11, 11);
+  border-radius: 22px;
+  outline: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 2%;
+}
+.footer h6 {
+  border-bottom: 2px solid rgb(168, 16, 16);
+  display: inline;
+}
+.home2 {
+  background-color: #efefef;
+}
+.animated-text {
+  font-size: 24px;
+  text-align: center;
+  animation: fade 4s infinite;
+  color: rgb(168, 11, 11);
+  width: 88%;
+  padding-top: 20px;
+}
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.contact {
+  background-color: #efefef;
+  padding: 3%;
+}
+.formpadding {
+  padding: 3% 19%;
+}
+.contactfooter {
+  padding: 3%;
+}
+.aboutimg img {
+  width: 100%;
+  padding: 5%;
+}
+.about {
+  padding-bottom: 5%;
+}
+.logbtn {
+  padding: 5%;
+  margin: 5%;
+  border: none;
+  outline: none;
+}
+.modal button {
+  background-color: rgba(168, 11, 11, 0.603);
+  font-size: large;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }

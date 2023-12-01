@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import Nav from "../Nav";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import "./donor.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../Home/imges/logo.png";
 
 function Donor_login() {
   const [donor_uname, setDonor_uname] = useState("");
@@ -21,7 +23,13 @@ function Donor_login() {
         donor_password,
       })
       .then((result) => {
-        if (result.data === "Login successfully") {
+        console.log(result.data);
+        if (result.data.message === "Login successfully") {
+          localStorage.setItem("donor_id", result.data.id);
+          localStorage.setItem("donor_blood", result.data.blood);
+          localStorage.setItem("donor_name",result.data.name);
+          localStorage.setItem("donor_mobile",result.data.mobile);
+          localStorage.setItem("token","qwertyuiop")
           navigate("/donor_dashboard");
           alert("Successfully logined");
         } else if (result.data === "password is incorrect") {
@@ -37,50 +45,68 @@ function Donor_login() {
 
   return (
     <div className="donor-log">
-      <Nav />
+      <div className="navshadow">
+        <Container>
+          <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <div className="col-9">
+              <Navbar.Brand href="/" className="toggleimg">
+                <img
+                  alt="no images"
+                  src={logo}
+                  className="d-inline-block align-top "
+                />{" "}
+              </Navbar.Brand>
+            </div>
+          </Navbar>
+        </Container>
+      </div>
+
       <div className="donor_logbody">
-        <div className="donor_logform">
-          <h4 className="text-center text-white">Donor Login</h4>
-          <FloatingLabel
-            controlId="floatingInput"
-            label=" User Name"
-            className=" form-style mb-3"
-          >
-            <Form.Control
-              value={donor_uname}
-              onChange={(e) => setDonor_uname(e.target.value)}
+        <Container>
+          <div className="donor_logform">
+            <h4 className="text-center text-white">Donor Login</h4>
+            <FloatingLabel
+              controlId="floatingInput"
+              label=" User Name"
+              className=" form-style mb-3"
+            >
+              <Form.Control
+                value={donor_uname}
+                onChange={(e) => setDonor_uname(e.target.value)}
+                className="form-style"
+                type="test"
+                placeholder=""
+              />
+            </FloatingLabel>
+            <FloatingLabel
               className="form-style"
-              type="test"
-              placeholder=""
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            className="form-style"
-            controlId="floatingPassword"
-            label="Password"
-          >
-            <Form.Control
-              value={donor_password}
-              onChange={(e) => setDonor_password(e.target.value)}
-              className="form-style"
-              type="password"
-              placeholder="Password"
-            />
-          </FloatingLabel>
-          <div className="text-center">
-            {" "}
-            <Button onClick={handleDonorLogin} variant="secondary mt-3 ">
-              Login
-            </Button>{" "}
+              controlId="floatingPassword"
+              label="Password"
+            >
+              <Form.Control
+                value={donor_password}
+                onChange={(e) => setDonor_password(e.target.value)}
+                className="form-style"
+                type="password"
+                placeholder="Password"
+              />
+            </FloatingLabel>
+            <div className="text-center">
+              {" "}
+              <Button onClick={handleDonorLogin} variant="danger mt-3 ">
+                Login
+              </Button>{" "}
+            </div>
+            <div className="text-light m-3">
+              Does not have an account ?{" "}
+              <Link className="text-light" to="/donor_register">
+                Please click here to Register
+              </Link>
+            </div>
+            <p className="text-center " id="donorAlert"></p>
+
           </div>
-          <div className="text-light m-3">
-            Does not have an account ?{" "}
-            <Link className="text-light" to="/donor_register">
-              Please click here to Register
-            </Link>
-          </div>
-        </div>
-        <p className="text-center text-danger mt-2 p-2 " id="donorAlert"></p>
+        </Container>
       </div>
     </div>
   );

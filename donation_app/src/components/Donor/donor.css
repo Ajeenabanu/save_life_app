@@ -1,21 +1,173 @@
 /* login */
 .donor_logbody {
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
-  padding: 12% 30%;
+  background-image: url("https://www.rush.edu/sites/default/files/media-images/Organ-Donation-Facts-OG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5% 28%;
 }
 .donor_logform {
+  margin-top: 132px;
+
   padding: 2% 7%;
   background-color: rgba(2, 5, 7, 0.5);
 }
 /* register */
 .donor_regbody {
   padding: 5% 20%;
-  background-image: url("https://www.genengnews.com/wp-content/uploads/2022/04/POV_GettyImages-1206053706-scaled.jpg");
+  background-image: url("https://www.rush.edu/sites/default/files/media-images/Organ-Donation-Facts-OG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .donor_form {
+  padding: 5%;
+  margin-top: 10%;
   background-color: rgba(16, 17, 17, 0.404);
-  padding: 3%;
 }
 .col-form-label {
   color: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+  .donor_logbody {
+    padding: 5% 1%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .donor_form {
+    margin-top: 40%;
+  }
+}
+/* donor dash */
+.DonDash {
+  padding-top: 5%;
+}
+.notification-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.notification-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notification-item {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.notification-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.notification-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notification-content {
+  flex: 1;
+  color: #333;
+}
+
+.donorNotification {
+  padding: 10% 15%;
+  margin-top: 38px;
+  background-color: #ffffff;
+}
+#closebtn {
+  align-self: flex-start;
+}
+@media Screen and (max-width: 658px) {
+  .donorNotificationbody {
+    margin-top: 10%;
+  }
+}
+.donorNotificationbody {
+  padding: 3%;
+  margin: 1%;
+  background-color: #ffffff;
+  border-left: 5px solid #8d0404;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 560px) {
+  .donorNotification {
+    padding: 5% 30%;
+  }
+}
+.donorhome {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10% 15%;
+  background-image: url("https://img.freepik.com/premium-photo/doctors-give-resuscitation-male-patient-emergency-room-cardiac-massage_179755-6101.jpg?w=740");
+}
+.donorhomebody {
+  font-size: larger;
+  padding: 5%;
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.705);
+}
+@media screen and (max-width: 710px) {
+  .donorhomebody {
+    margin-top: 25%;
+  }
+}
+.navlist {
+  gap: 12px;
+  font-size: 1.5em;
+  margin-right: 5%;
+}
+.fa-bell:before {
+  content: "\f0f3";
+  font-size: 18px;
+}
+.fa-user:before {
+  content: "\f007";
+  font-size: 17px;
+}
+.fa-right-from-bracket:before,
+.fa-sign-out-alt:before {
+  content: "\f2f5";
+  font-size: 16px;
+}
+.donor_edit_body {
+  padding: 6%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+  background-color: rgb(239 240 244);
+}
+.donor_edit {
+  padding: 5% 8%;
+}
+#donorAlert{
+  margin-top: 2%;
+  background-color: #9b9797ab;
+  color: #8d0404;
+  font-size: large;
+  font-weight: bold;
 }

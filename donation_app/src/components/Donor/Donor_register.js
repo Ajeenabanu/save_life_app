@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Nav from "../Nav";
 import "./donor.css";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -7,6 +6,9 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../Home/imges/logo.png";
 
 function Donor_register() {
   const [donor_name, setDonor_name] = useState("");
@@ -23,6 +25,13 @@ function Donor_register() {
   // submit
   const donorRegister = (e) => {
     e.preventDefault();
+    const isValidMobile = /^\d{10}$/.test(donor_mobile);
+
+    if (!isValidMobile) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
     axios
       .post("http://localhost:3001/donor_register", {
         donor_name: donor_name,
@@ -48,9 +57,22 @@ function Donor_register() {
 
   return (
     <div className="donor_reg">
-      <Nav />
+      <div className="navshadow">
+        <Container>
+          <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <div className="col-9">
+              <Navbar.Brand href="/" className="toggleimg">
+                <img
+                  alt="no images"
+                  src={logo}
+                  className="d-inline-block align-top "
+                />{" "}
+              </Navbar.Brand>
+            </div>
+          </Navbar>
+        </Container>
+      </div>{" "}
       <div className="donor_regbody">
-        <h3 className="text-center text-white">Donor Register</h3>
         <div className="donor_form">
           <Form>
             <Form.Group
@@ -190,7 +212,6 @@ function Donor_register() {
                   <option value="AB+">AB+</option>
                   <option value="AB-">AB-</option>
                   <option value="None">None</option>
-
                 </Form.Select>{" "}
               </Col>
             </Form.Group>
@@ -214,7 +235,7 @@ function Donor_register() {
             </Form.Group>
             <div className="text-center">
               {" "}
-              <Button onClick={donorRegister} variant="primary  ">
+              <Button onClick={donorRegister} variant="danger">
                 Register
               </Button>{" "}
             </div>
