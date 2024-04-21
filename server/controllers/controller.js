@@ -21,7 +21,7 @@ const createDonor = async (req, res) => {
   } = req.body;
 
   const newDonor = new donorReg({
-    donor_name,
+    donor_name,  
     donor_uname,
     donor_password,
     donor_age,
